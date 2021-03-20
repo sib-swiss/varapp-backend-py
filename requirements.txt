@@ -1,13 +1,8 @@
-asgiref==3.3.1
-Django==3.2rc1
+django>=1.8.1
 django-cors-headers==3.7.0
 django-jsonview==2.0.0
 django-redis==4.12.1
-mod-wsgi==4.7.1
-mysqlclient==2.0.3
-numpy==1.20.1
 PyJWT==2.0.1
-pytz==2021.1
-redis==3.5.3
-sqlparse==0.4.1
-varapp-backend-py==1.1
+numpy==1.20.1
+mysqlclient==2.0.3
+mod-wsgi==4.7.1
