@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from varapp.views.main_views import *
 from varapp.views.accounts_views import *
 from varapp.views.bookmarks_views import *
@@ -27,14 +27,14 @@ urlpatterns = [
     path('<db>/variants', p_variants, name='variants'),
     path('<db>/variants/export', p_export_variants, name='export'),
     path('<db>/stats', p_stats, name='stats'),
-    path('<db>/location/autocomplete/(?P<prefix>[\w\-,:\s]+)', location_names_autocomplete),
-    path('<db>/location/(?P<loc>[\w\-,:\s]+)', location_find),
+    re_path('(?P<db>.*)/location/autocomplete/(?P<prefix>[\w\-,:\s]+)', location_names_autocomplete),
+    re_path('(?P<db>.*)/location/(?P<loc>[\w\-,:\s]+)', location_find),
     path('<db>/getBookmarks', p_get_bookmarks),
     path('<db>/setBookmark', p_set_bookmark),
     path('<db>/deleteBookmark', p_delete_bookmark),
 
     # Older shorter versions with the default db
-    path('location/autocomplete/(?P<prefix>[\w\-,:\s]+)', location_names_autocomplete),
-    path('location/(?P<loc>[\w\-,:\s]+)', location_find),
+    re_path('location/autocomplete/(?P<prefix>[\w\-,:\s]+)', location_names_autocomplete),
+    re_path('location/(?P<loc>[\w\-,:\s]+)', location_find),
 ]
 

@@ -91,7 +91,7 @@ def set_jwt(info, secret, duration=3600):
     """
     if duration:
         info['exp'] = datetime.datetime.utcnow() + datetime.timedelta(seconds=duration)
-    token = jwt.encode(info, secret, algorithm='HS256').decode('utf-8')
+    token = jwt.encode(info, secret, algorithm='HS256')
     return token
 
 def verify_jwt(auth_header, secret):
