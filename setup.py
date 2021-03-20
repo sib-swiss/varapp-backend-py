@@ -47,11 +47,11 @@ if USE_CYTHON:
     if os.path.exists("varapp/filters/apply_bitwise.c"):
         os.remove("varapp/filters/apply_bitwise.c")
     ext_modules = [
-        Extension("varapp.filters.apply_bitwise", sources=[ "varapp/filters/apply_bitwise.pyx" ]),
+        Extension("varapp.filters.apply_bitwise", sources=[ "varapp/filters/apply_bitwise.pyx" ], include_dirs=[numpy.get_include()]),
     ]
 else:
     ext_modules = [
-        Extension("varapp.filters.apply_bitwise", sources=[ "varapp/filters/apply_bitwise.c" ]),
+        Extension("varapp.filters.apply_bitwise", sources=[ "varapp/filters/apply_bitwise.c" ], include_dirs=[numpy.get_include()]),
     ]
 
 

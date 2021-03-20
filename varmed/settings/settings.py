@@ -22,10 +22,10 @@ WARMUP_GENOTYPES_CACHE = True       # Generate genotypes cache for all active db
 
 ## Users db
 DB_USERS = 'users_db'               # Name of the main database, that stores sessions, db connections etc.
-MYSQL_HOST = 'localhost'
+MYSQL_HOST = '127.0.0.1'
 MYSQL_USER = 'root'
 MYSQL_PWD = 'pwd'
-MYSQL_PORT = ''
+MYSQL_PORT = '3306'
 
 ## Adds the users_db to DATABASES
 DATABASES['default'] = {

@@ -26,7 +26,7 @@ Example usage as a secondary cache::
 import time
 
 from django.core.cache.backends.base import BaseCache
-from django.utils.synch import RWLock
+from .synch import RWLock
 
 # Global in-memory store of cache data. Keyed by name, to provide
 # multiple named local memory caches.

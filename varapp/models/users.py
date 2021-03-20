@@ -38,7 +38,7 @@ class People(UsersModel):
     phone = models.CharField(max_length=30, null=True)
     is_laboratory = models.IntegerField(null=True)
 
-    laboratory = models.ForeignKey('People', null=True)
+    laboratory = models.ForeignKey('People', null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -54,8 +54,8 @@ class Users(UsersModel):
     activation_code = models.CharField(max_length=25, null=True)
     is_password_reset = models.IntegerField(null=True)
 
-    person = models.ForeignKey(People, null=True)
-    role = models.ForeignKey(Roles, null=True)
+    person = models.ForeignKey(People, null=True, on_delete=models.CASCADE)
+    role = models.ForeignKey(Roles, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True  # If True, Django will create a table on migration
@@ -82,8 +82,8 @@ class DbAccess(UsersModel):
     """Many-to-many access of users to databases"""
     id = models.AutoField(primary_key=True)
 
-    user = models.ForeignKey(Users, null=True)
-    variants_db = models.ForeignKey(VariantsDb, null=True)
+    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE)
+    variants_db = models.ForeignKey(VariantsDb, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -96,7 +96,7 @@ class Preferences(UsersModel):
     preferences = models.TextField(default='')
     description = models.TextField(default='')
 
-    user = models.ForeignKey(Users, null=True)
+    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -110,7 +110,7 @@ class Annotation(UsersModel):
     annotation = models.CharField(max_length=255, null=True)
     annotation_version = models.CharField(max_length=255, null=True)
 
-    variants_db = models.ForeignKey(VariantsDb, null=True)
+    variants_db = models.ForeignKey(VariantsDb, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -123,7 +123,7 @@ class Bookmarks(UsersModel):
     description = models.CharField(max_length=255)
     long_description = models.TextField(default='')
 
-    db_access = models.ForeignKey(DbAccess, null=True)
+    db_access = models.ForeignKey(DbAccess, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -139,7 +139,7 @@ class History(UsersModel):
     long_description = models.TextField(default='')
     ip_address = models.CharField(max_length=255)
 
-    user = models.ForeignKey(Users, null=True)
+    user = models.ForeignKey(Users, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -152,7 +152,7 @@ class Bam(UsersModel):
     key = models.CharField(max_length=255, null=True)
     sample = models.CharField(max_length=255, null=True)
 
-    variants_db = models.ForeignKey(VariantsDb, null=True)
+    variants_db = models.ForeignKey(VariantsDb, null=True, on_delete=models.CASCADE)
 
     class Meta:
         managed = True

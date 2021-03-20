@@ -34,8 +34,10 @@ CORS_ALLOW_METHODS = ('GET','POST','PUT','PATCH','DELETE','OPTIONS') # default
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = ('x-requested-with','content-type','accept','origin','authorization','x-csrftoken')
 CORS_ORIGIN_WHITELIST = (
-    'varapp.vital-it.ch',
-    'varapp-dev.vital-it.ch'
+    'http://varapp.vital-it.ch',
+    'https://varapp.vital-it.ch',
+    'http://varapp-dev.vital-it.ch',
+    'https://varapp-dev.vital-it.ch'
 )
 # etc., see https://github.com/ottoyiu/django-cors-headers
 
@@ -54,12 +56,11 @@ INSTALLED_APPS = (
     'corsheaders',       # CORS headers
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',  # no need with JWT
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
