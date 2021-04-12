@@ -59,9 +59,9 @@ def check_redis_connection():
         logging.error("django_redis.cache.RedisCache backend not found")
         return False
     try:
-        return 'somekey' in redis_cache or True
-    except Exception:
-        logging.error("Could not connect to Redis")
+        return redis_cache.get('whatever') or True
+    except Exception as ex:
+        logging.error("Could not connect to Redis: {}".format(ex))
         return False
 
 
