@@ -3,7 +3,7 @@ from pkg_resources import parse_version
 import re
 
 
-VARAPP_VERSION = '1.1'
+VARAPP_VERSION = '2.0.0'
 
 
 with open('./README.rst') as readme:
