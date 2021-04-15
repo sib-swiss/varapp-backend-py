@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.0 - 15.04.2021
+## v2.0.1 - 15.04.2021
 
 - Added GnomAD annotation and filter
 
