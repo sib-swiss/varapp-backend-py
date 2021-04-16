@@ -13,7 +13,6 @@ services:
       MYSQL_DATABASE: users_db
     volumes:
       - mysql-data-volume:/var/lib/mysql
-      - ./resources/sql:/docker-entrypoint-initdb.d
   redis:
     image: "redis:alpine"
     networks:
@@ -34,7 +33,7 @@ services:
       - mysql
       - redis
     volumes:
-      - ./resources/db:/db
+      - ${GEMINI_DB_PATH:-./resources/db}:/db
 
 networks:
   varapp: {}

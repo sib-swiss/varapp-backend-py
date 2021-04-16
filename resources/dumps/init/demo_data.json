@@ -93,7 +93,7 @@
             "visible_name": "demo_mini",
             "filename": "demo_mini.db",
             "location": "resources/db/",
-            "hash": "e25b76e60082485158292750c239a2d255b742eb",
+            "hash": "11c2ce0fc535427f05b8cae6db084622d36411c9",
             "description": "My first Gemini db",
             "size": null,
             "is_active": 1,

@@ -105,8 +105,7 @@ in `Hum Mutat. 2014 Apr;35(4):447-51 <http://www.ncbi.nlm.nih.gov/pubmed/2451578
 If you liked it, we encourage you to deploy an instance at your own lab
 and share the experience.
 
+Usage via Docker
+................
 
-Contact
--------
 
-App main developer: `Julien Delafontaine <julien.delafontaine@sib.swiss>`_

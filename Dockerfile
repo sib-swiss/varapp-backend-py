@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 RUN mod_wsgi-docker-build
 
-RUN mv /app/varmed/settings/settings_docker.py /app/varmed/settings/settings.py
+COPY ./docker/settings_docker.py /app/varmed/settings/settings.py
 RUN python3 setup.py install
 
 EXPOSE 80
