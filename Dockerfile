@@ -1,8 +1,10 @@
-FROM grahamdumpleton/mod-wsgi-docker:python-3.4-onbuild
+FROM grahamdumpleton/mod-wsgi-docker:python-3.4
+
+WORKDIR /app
+COPY . /app
+RUN mod_wsgi-docker-build
 
 RUN mv /app/varmed/settings/settings_docker.py /app/varmed/settings/settings.py
-RUN apt-get update
-RUN apt-get install -y redis-server
 RUN python3 setup.py install
 
 EXPOSE 80

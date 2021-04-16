@@ -303,6 +303,16 @@ class TestVariantFilters(unittest.TestCase):
         self.assertTrue(any([x.aaf_exac_all is not None for x in vexac]))
         self.assertTrue(all((x.aaf_exac_all or sys.maxsize) > freq for x in vexac))
 
+    def test_frequency_gnomad_all(self):
+        """Returns only rare variants - based on ESP."""
+        freq = 0.4
+        f = FrequencyFilter('gnomad','all')(freq, '', '>')
+        var = self.apply_filter(f)
+        vgnomad = list(var)
+        self.assertSomethingWasFilteredOut(vgnomad)
+        self.assertTrue(any([x.aaf_gnomad_all is not None for x in vgnomad]))
+        self.assertTrue(all((x.aaf_gnomad_all or sys.maxsize) > freq for x in vgnomad))
+
     def test_frequency_max_all(self):
         """Returns only rare variants - based on ESP."""
         freq = 0.3
