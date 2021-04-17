@@ -34,6 +34,9 @@ services:
       - redis
     volumes:
       - ${GEMINI_DB_PATH:-./resources/db}:/db
+      - ${SETTINGS_PATH:-./varmed/settings}:/app/varmed/settings
+    environment:
+      - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
 
 networks:
   varapp: {}
