@@ -154,6 +154,6 @@ It allows you to add/remove databases inside ``$GEMINI_DB_PATH`` dymanically.
 The location of Django settings is configured via the environment variable ``SETTINGS_PATH``,
 defaults to ``./varmed/settings``, and is mounted to ``/app/varmed/settings`` inside the container.
 
-It allows you to modify the settings file ``settings.py`` inside ``$SETTINGS_PATH`` dynamically
+It allows you to modify the settings file ``settings_docker.py`` inside ``$SETTINGS_PATH`` dynamically
 (you will still need to restart the service). **Not** ``settings.py``, which is used for local
 development and manual installations.
