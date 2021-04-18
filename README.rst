@@ -124,6 +124,11 @@ Deployment
 Clone the repository for the backend:
 
   git clone git@github.com:sib-swiss/varapp-backend-py.git
+  cd varapp-backend-py
+
+Build the Docker image:
+
+  docker build -t varapp-backend .
 
 Run the docker-compose at the root of the repository:
 
