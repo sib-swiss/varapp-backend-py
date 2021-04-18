@@ -86,7 +86,7 @@ Try the following standard filters:
 - Quality filter: PASS (VQSR)
 - HIGH/MED impact
 
-You should retreive a single variant on gene TBC1D7 that has been published
+You should retrieve a single variant on gene TBC1D7 that has been published
 in `Hum Mutat. 2014 Apr;35(4):447-51 <http://www.ncbi.nlm.nih.gov/pubmed/24515783>`_.
 
 .. note::
@@ -101,12 +101,3 @@ in `Hum Mutat. 2014 Apr;35(4):447-51 <http://www.ncbi.nlm.nih.gov/pubmed/2451578
 
     This version runs on minimal hardware, thus its performance is not comparable
     to a real production setup.
-
-If you liked it, we encourage you to deploy an instance at your own lab
-and share the experience.
-
-
-Contact
--------
-
-App main developer: `Julien Delafontaine <julien.delafontaine@sib.swiss>`_
