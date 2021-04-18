@@ -279,13 +279,14 @@ class FrequencyFilter:
     """Filter based on allele frequency in 1000 Genomes/ESP.
     Not a Filter itself, it returns a ContinuousFilter instance when called.
 
-    :param freqdb: either '1kg' (100 Genomes) or 'esp' (ESP)
+    :param freqdb: on of '1kg' (100 Genomes) , 'esp' (ESP), 'gnomad' (GnomAD)
     :param pop: one of 'all','amr','eas','sas','afr','eur' (1000 Genomes)
-        or one of 'all','ea','aa' (ESP).
+        or one of 'all','ea','aa' (ESP)
+        or one of 'afr','amr','asj','eas','fin','nfe','oth','sas' (Gnomad).
     """
-    dbs = ['1kg', 'esp', 'exac', 'max']
+    dbs = ['1kg', 'esp', 'exac', 'gnomad', 'max']
     #pops = {'1kg': ['all','amr','eas','sas','afr','eur' ], 'esp': ['all','ea','aa'], 'exac': ['all']}
-    pops = {'1kg': ['all'], 'esp': ['all'], 'exac': ['all'], 'max': ['all']}
+    pops = {'1kg': ['all'], 'esp': ['all'], 'exac': ['all'], 'gnomad': ['all'], 'max': ['all']}
 
     def __init__(self, freqdb='1kg', pop='all'):
         self.freqdb = freqdb

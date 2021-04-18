@@ -26,7 +26,7 @@ TRUE_FALSE_ANY_FILTER_NAMES = ['in_dbsnp', 'in_1kg', 'in_esp', 'in_exac', 'is_ex
 # 0 to 1, diff. meanings
 ZERO_ONE_FILTER_NAMES = ['polyphen_score', 'sift_score']
 # 0 to 1, null has freq=0
-FREQUENCY_FILTER_NAMES = ['aaf_1kg_all', 'aaf_esp_all', 'aaf_exac_all', 'aaf_max_all']
+FREQUENCY_FILTER_NAMES = ['aaf_1kg_all', 'aaf_esp_all', 'aaf_exac_all', 'aaf_gnomad_all', 'aaf_max_all']
 # 0 to 1, null has pval=1
 PVALUE_FILTER_NAMES = [] #['gerp_element_pval']
 # unbound

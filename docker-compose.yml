@@ -1,23 +1,29 @@
 version: '2'
 volumes:
-  data-volume: {}
+  mysql-data-volume: {}
 services:
   mysql:
     image: mariadb
+    networks:
+      - varapp
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: pwd
       MYSQL_DATABASE: users_db
     volumes:
-      - data-volume:/var/lib/mysql
-      - ./resources/sql:/docker-entrypoint-initdb.d
+      - mysql-data-volume:/var/lib/mysql
   redis:
     image: "redis:alpine"
+    networks:
+      - varapp
+    restart: always
     ports:
       - "6379:6379"
   backend:
-    image: varapp
+    image: varapp-backend
+    networks:
+      - varapp
     ports:
       - "8000:80"
     depends_on:
@@ -26,3 +32,11 @@ services:
     links:
       - mysql
       - redis
+    volumes:
+      - ${GEMINI_DB_PATH:-./resources/db}:/db
+      - ${SETTINGS_PATH:-./varmed/settings}:/app/varmed/settings
+    environment:
+      - DJANGO_SETTINGS_MODULE=varmed.settings.settings_docker
+
+networks:
+  varapp: {}
